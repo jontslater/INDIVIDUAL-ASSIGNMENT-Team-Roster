@@ -2,8 +2,8 @@
 
 html,
 body {
-  width: 100vw;
-        height: 150vh;        
+  width: 70vw;
+        height: 200vh;        
         background: url("https://img.freepik.com/free-photo/beautiful-shot-forest-with-tall-green-trees_181624-20615.jpg?w=1380&t=st=1705965196~exp=1705965796~hmac=550c63fbdc04da82d499c13dcdfad52d898b0054938dd70119d0c214674984aa") no-repeat;
         background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -29,8 +29,8 @@ a {
 
 .teamcard{
   background-image: url("https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/267318677/original/9e4dad3ae82eb6371bb0d5e71077de2632c77e34/draw-fantasy-dnd-background-landscape-and-environment-art.png");
-  width: 40vw;
-  height: 45vh;
+  width: 500px;
+  height: 500px;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  font-style: italic;
@@ -45,4 +45,8 @@ a {
 
 .mb-3{
   color: black;
+}
+
+.imageCard{
+  margin-right: 500px;
 }

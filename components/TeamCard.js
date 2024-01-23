@@ -14,6 +14,7 @@ function TeamCard({ memberObj, onUpdate }) {
   return (
     <Card className="teamcard" style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
+        <Card.Img className="imageCard" variant="top" src={memberObj.img} alt="" style={{ height: '100px', width: '100px' }} />
         <Card.Title> Name: {memberObj.name}</Card.Title>
         <Card.Title> Race: {memberObj.Race}</Card.Title>
         <Card.Title>Class: {memberObj.Class}</Card.Title>
@@ -39,6 +40,7 @@ function TeamCard({ memberObj, onUpdate }) {
 
 TeamCard.propTypes = {
   memberObj: PropTypes.shape({
+    img: PropTypes.string,
     name: PropTypes.string,
     Str: PropTypes.string,
     Dex: PropTypes.string,

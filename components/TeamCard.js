@@ -5,25 +5,30 @@ import Link from 'next/link';
 import { deleteSingleMember } from '../api/teamData';
 
 function TeamCard({ memberObj, onUpdate }) {
-  const deleteThisAuthor = () => {
+  const deleteThisMember = () => {
     if (window.confirm(`Delete ${memberObj.name}?`)) {
       deleteSingleMember(memberObj.firebaseKey).then(() => onUpdate());
     }
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card className="teamcard" style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
         <Card.Title> Name: {memberObj.name}</Card.Title>
         <Card.Title> Race: {memberObj.Race}</Card.Title>
         <Card.Title>Class: {memberObj.Class}</Card.Title>
         <Card.Title>Role: {memberObj.role}</Card.Title>
-        <Card.Title>Stats: {memberObj.stats}</Card.Title>
+        <Card.Title>Str: {memberObj.Str}</Card.Title>
+        <Card.Title>Dex: {memberObj.Dex}</Card.Title>
+        <Card.Title>Con: {memberObj.Con}</Card.Title>
+        <Card.Title>Int: {memberObj.Int}</Card.Title>
+        <Card.Title>Wis: {memberObj.Wis}</Card.Title>
+        <Card.Title>Cha: {memberObj.Cha}</Card.Title>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`/members/edit/${memberObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button className="MemCard-btn" variant="info">EDIT</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisAuthor} className="m-2">
+        <Button variant="danger" onClick={deleteThisMember} className="m-2 MemCard-btn">
           DELETE
         </Button>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
@@ -35,7 +40,12 @@ function TeamCard({ memberObj, onUpdate }) {
 TeamCard.propTypes = {
   memberObj: PropTypes.shape({
     name: PropTypes.string,
-    stats: PropTypes.string,
+    Str: PropTypes.string,
+    Dex: PropTypes.string,
+    Con: PropTypes.string,
+    Int: PropTypes.string,
+    Wis: PropTypes.string,
+    Cha: PropTypes.string,
     Race: PropTypes.string,
     Class: PropTypes.string,
     role: PropTypes.string,

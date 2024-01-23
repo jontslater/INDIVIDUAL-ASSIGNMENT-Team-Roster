@@ -101,24 +101,66 @@ function MemberForm({ obj }) {
         />
       </FloatingLabel>
 
-      <FloatingLabel
-        controlId="floatingTextarea"
-        label="  Strength
-          Dexterity
-          Constitution
-          Intelligence
-          Wisdom
-          Charisma"
-        className="mb-3"
-      >
+      <FloatingLabel controlId="floatingInput3" label=" Strength" className="mb-3">
         <Form.Control
-          as="textarea"
-          placeholder="
-          stats
-          "
-          style={{ height: '100px' }}
-          name="stats"
-          value={formInput.stats}
+          type="number"
+          placeholder="Strength"
+          name="Str"
+          value={formInput.Str}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+
+      <FloatingLabel controlId="floatingInput3" label=" Dexterity" className="mb-3">
+        <Form.Control
+          type="number"
+          placeholder="Dexterity"
+          name="Dex"
+          value={formInput.Dex}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+
+      <FloatingLabel controlId="floatingInput3" label=" Constitution " className="mb-3">
+        <Form.Control
+          type="number"
+          placeholder="Constitution"
+          name="Con"
+          value={formInput.Con}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+
+      <FloatingLabel controlId="floatingInput3" label=" Intelligence " className="mb-3">
+        <Form.Control
+          type="number"
+          placeholder="Intelligence"
+          name="Int"
+          value={formInput.Int}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+
+      <FloatingLabel controlId="floatingInput3" label=" Wisdom" className="mb-3">
+        <Form.Control
+          type="number"
+          placeholder="Wisdom"
+          name="Wis"
+          value={formInput.Wis}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+      <FloatingLabel controlId="floatingInput3" label=" Charisma " className="mb-3">
+        <Form.Control
+          type="number"
+          placeholder="Charisma"
+          name="Cha"
+          value={formInput.Cha}
           onChange={handleChange}
           required
         />
@@ -131,6 +173,12 @@ function MemberForm({ obj }) {
 
 MemberForm.propTypes = {
   obj: PropTypes.shape({
+    Str: PropTypes.string,
+    Dex: PropTypes.string,
+    Con: PropTypes.string,
+    Int: PropTypes.string,
+    Wis: PropTypes.string,
+    Cha: PropTypes.string,
     name: PropTypes.string,
     Race: PropTypes.string,
     role: PropTypes.string,

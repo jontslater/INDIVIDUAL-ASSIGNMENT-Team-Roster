@@ -6,6 +6,11 @@ import TeamCard from '../components/TeamCard';
 function Home() {
   const { user } = useAuth();
   const [team, setTeam] = useState([]);
+  const [query, setQuery] = useState('');
+
+  const filteredMembers = team.filter((member) => member.name.toLowerCase().includes(query.toLowerCase())
+  || member.Race.toLowerCase().includes(query.toLowerCase()) || member.Class.toLowerCase().includes(query.toLowerCase()) || member.role.toLowerCase().includes(query.toLowerCase()));
+
   const getTheTeam = () => {
     getTeam(user.uid).then(setTeam);
   };
@@ -15,14 +20,20 @@ function Home() {
   }, []);
 
   return (
-    <div className="text-center my-4">
-      <div className="d-flex flex-wrap">
-        {team.map((member) => (
-          <TeamCard key={member.firebaseKey} memberObj={member} onUpdate={getTheTeam} />
-        ))}
+    <>
+      <br />
+      Search:
+      <input className="searchBar" value={query} onChange={(e) => setQuery(e.target.value)} type="search" />
+      <br />
+      <br />
+      <div className="text-center my-4">
+        <div className="d-flex flex-wrap">
+          {filteredMembers.map((member) => (
+            <TeamCard key={member.firebaseKey} memberObj={member} onUpdate={getTheTeam} />
+          ))}
+        </div>
       </div>
-
-    </div>
+    </>
   );
 }
 

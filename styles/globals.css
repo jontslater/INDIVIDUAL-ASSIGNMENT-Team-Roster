@@ -50,3 +50,11 @@ a {
 .imageCard{
   margin-right: 500px;
 }
+
+.searchBar{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+  border-radius: 30%;
+  border: solid black thin;
+
+}

@@ -6,10 +6,16 @@ import { useAuth } from '../../utils/context/authContext';
 import { createMember, updateMember } from '../../api/teamData';
 
 const initialState = {
-  description: '',
-  first_name: '',
-  last_name: '',
-  favorite: false,
+  name: '',
+  role: '',
+  Wis: '',
+  Str: '',
+  Race: '',
+  Int: '',
+  Dex: '',
+  Con: '',
+  Cha: '',
+  Class: '',
 };
 
 function MemberForm({ obj }) {
@@ -79,6 +85,7 @@ function MemberForm({ obj }) {
           required
         />
       </FloatingLabel>
+
       <FloatingLabel controlId="floatingInput3" label=" Member Class" className="mb-3">
         <Form.Control
           type="text"

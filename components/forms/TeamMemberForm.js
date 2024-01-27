@@ -6,10 +6,16 @@ import { useAuth } from '../../utils/context/authContext';
 import { createMember, updateMember } from '../../api/teamData';
 
 const initialState = {
-  description: '',
-  first_name: '',
-  last_name: '',
-  favorite: false,
+  name: '',
+  role: '',
+  Wis: '',
+  Str: '',
+  Race: '',
+  Int: '',
+  Dex: '',
+  Con: '',
+  Cha: '',
+  Class: '',
 };
 
 function MemberForm({ obj }) {
@@ -69,16 +75,17 @@ function MemberForm({ obj }) {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput3" label=" Member Race" className="mb-3">
+      <FloatingLabel controlId="floatingInput3" label="Member Race " className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Member Race"
+          placeholder="Race"
           name="Race"
           value={formInput.Race}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
+
       <FloatingLabel controlId="floatingInput3" label=" Member Class" className="mb-3">
         <Form.Control
           type="text"
@@ -173,16 +180,15 @@ function MemberForm({ obj }) {
 
 MemberForm.propTypes = {
   obj: PropTypes.shape({
-    Str: PropTypes.string,
-    Dex: PropTypes.string,
-    Con: PropTypes.string,
-    Int: PropTypes.string,
-    Wis: PropTypes.string,
-    Cha: PropTypes.string,
+    Str: PropTypes.number,
+    Dex: PropTypes.number,
+    Con: PropTypes.number,
+    Int: PropTypes.number,
+    Wis: PropTypes.number,
+    Cha: PropTypes.number,
     name: PropTypes.string,
     Race: PropTypes.string,
     role: PropTypes.string,
-    stats: PropTypes.bool,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
